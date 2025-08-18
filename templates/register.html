@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Créer un compte</h2>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" class="auth-form" onsubmit="return validateRegister()">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+                <small id="username-error" class="error-text"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+                <small id="password-error" class="error-text"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" required>
+                <small id="confirm-error" class="error-text"></small>
+            </div>
+            
+            <button type="submit">
+                <i class="fas fa-user-plus"></i> S'inscrire
+            </button>
+        </form>
+        
+        <div class="auth-footer">
+            <p>Déjà inscrit ? <a href="/login">Se connecter</a></p>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
