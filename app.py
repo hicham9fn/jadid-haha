@@ -116,7 +116,9 @@ def analyze():
             "bonjour": "Salutation française",
             "python": "Langage de programmation",
             "hicham": "howa li 9ad had lboot dyal l3bar b idafa l chatgptt  .-.",
-            "issam ": "sa7eb hicham"
+            "issam ": "sa7eb hicham",
+            "new" : "yes vrai",
+             "news" : "yes vrasqi",
           
         }
         explanation = explanations.get(text.lower(), "Aucune explication spécifique disponible")
